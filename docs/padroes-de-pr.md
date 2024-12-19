@@ -1,0 +1,1 @@
+### Descreva aqui sobre os padrões de PR utilizados
