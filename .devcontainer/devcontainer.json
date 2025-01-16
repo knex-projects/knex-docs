@@ -1,0 +1,33 @@
+{
+    "name": "Backend Skills",
+    "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:0-20",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "editorconfig.editorconfig",
+                "eamodio.gitlens",
+                "naumovs.color-highlight"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "editor.formatOnSave": true,
+                "files.exclude": {
+                "**/node_modules": true
+                },
+                "[typescript]": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "explorer.compactFolders": false,
+                "prettier.prettierPath": "./node_modules/prettier"
+                }
+            }
+        },
+    "forwardPorts": [3000],
+    "postCreateCommand": "npm install",
+    "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ]
+}
