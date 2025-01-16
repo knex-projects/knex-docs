@@ -1,0 +1,8 @@
+{
+     "editor.formatOnSave": true,
+     "[typescript]": {
+       "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "explorer.compactFolders": false,
+     "prettier.prettierPath": "./node_modules/prettier"
+}
