@@ -15,10 +15,10 @@
                 "terminal.integrated.shell.linux": "/bin/bash",
                 "editor.formatOnSave": true,
                 "files.exclude": {
-                "**/node_modules": true
+                    "**/node_modules": true
                 },
                 "[typescript]": {
-                "editor.defaultFormatter": "esbenp.prettier-vscode"
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
                 },
                 "explorer.compactFolders": false,
                 "prettier.prettierPath": "./node_modules/prettier"
