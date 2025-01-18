@@ -27,19 +27,27 @@ npm i -D prettier eslint @typescript-eslint/eslint-plugin @typescript-eslint/par
 ## Configurações
 - ESLint
 
-  Define as configurações e regras do ESLint
+  Define as configurações e regras do ESLint para projetos com React e TS
   * Front
   ```json
   //.eslintrc-front.json
   {
     "extends": [
       "next/core-web-vitals",
-      "prettier"
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:prettier/recommended"
     ],
-    "plugins": ["@typescript-eslint"],
+    "plugins": ["@typescript-eslint", "react", "react-hooks"],
     "parser": "@typescript-eslint/parser",
     "rules": {
-      "@typescript-eslint/no-unused-vars": "error" 
+      "@typescript-eslint/no-unused-vars": "error"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
     }
   }
   ```
@@ -68,8 +76,12 @@ npm i -D prettier eslint @typescript-eslint/eslint-plugin @typescript-eslint/par
       '@typescript-eslint/interface-name-prefix': 'off',
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unused-vars': 'error'
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/consistent-type-imports': 'error', 
+      'prettier/prettier': 'error', 
+      'no-console': 'warn',
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
     },
   }
   ```
@@ -79,8 +91,12 @@ npm i -D prettier eslint @typescript-eslint/eslint-plugin @typescript-eslint/par
     1. Remove a obrigatoriedade de interfaces possuírem prefixo no nome, como "I"
     2. Remove a obrigatoriedade de definir explicitamento o tipo de retorno de funções
     3. Remove a obrigatoriedade de definir explicitamento o tipo de retorno de funções e variáveis exportadas
-    4. Permiti o uso de any para definir tipos
+    4. Não permite o uso do tipo any, lança warning
     5. Marca como erro qualquer variável ou parâmetro declarado que não seja utilizado.
+    6. Força a importação consistente de tipos
+    7. Ser formatado
+    8. Desabilita uso exagerado do console
+    9. Desabilita o uso de debugger em ambiente de produção
 
   * .eslintignore **(Back e Front)**
 
