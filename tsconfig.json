@@ -8,13 +8,20 @@
         "strict": true,
         "skipLibCheck": true,
         "sourceMap": true,
-        "outDir": "dist",
+        "outDir": "./dist",
+        "baseUrl": "./",
+        "strictNullChecks": true,
+        "paths": {
+            "@components/*": ["src/components/*"],
+            "@utils/*": ["src/utils/*"]
+        },
+        "rootDir": "./src"
     },
     "include": [
-      "src/**/*.ts"
+        "src/**/*.ts"
     ],
     "exclude": [
-      "src/**/*.spec.ts",
-      "node_modules"
+        "src/**/*.spec.ts",
+        "node_modules"
     ]
   }
