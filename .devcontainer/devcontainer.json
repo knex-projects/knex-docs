@@ -21,7 +21,8 @@
                     "editor.defaultFormatter": "esbenp.prettier-vscode"
                 },
                 "explorer.compactFolders": false,
-                "prettier.prettierPath": "./node_modules/prettier"
+                "prettier.prettierPath": "./node_modules/prettier",
+                "debug.node.autoAttach": "on"
                 }
             }
         },
@@ -29,5 +30,13 @@
     "postCreateCommand": "npm install",
     "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-    ]
+    ],
+    "containerEnv": {
+        "NODE_ENV": "development", 
+        "API_URL": "http://localhost:3000", 
+        "DB_HOST": "localhost", 
+        "DB_PORT": "5432", 
+        "DB_USER": "user", 
+        "DB_PASSWORD": "password"
+    }
 }
