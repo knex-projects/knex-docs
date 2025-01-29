@@ -1,0 +1,11 @@
+{
+     "recommendations": [
+          "dbaeumer.vscode-eslint",
+          "esbenp.prettier-vscode",
+          "editorconfig.editorconfig",
+          "eamodio.gitlens",
+          "naumovs.color-highlight",
+          "ms-vscode.vscode-typescript-next",
+          "ms-azuretools.vscode-docker"        
+     ]
+   }
